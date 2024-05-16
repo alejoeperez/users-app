@@ -31,13 +31,13 @@ public class UserController {
 	}
 	
 	@GetMapping("/bystartwith")
-	public ResponseEntity<List<User>> getByStartWith(@RequestParam ("text") String text){
+	public ResponseEntity<List<User>> getByStartWith(@RequestParam ("text") String text){		
 		return new ResponseEntity<List<User>>(userService.getByStartWith(text), HttpStatus.OK);
 	}
 	
 	@GetMapping("/contains")
-	public ResponseEntity<List<User>> getByContains(@RequestParam ("text") String text){
-		return new ResponseEntity<List<User>>(userService.getByStartWith(text), HttpStatus.OK);
+	public ResponseEntity<List<User>> getByContains(@RequestParam ("text") String text){		
+		return new ResponseEntity<List<User>>(userService.getByContains(text), HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "/{username}")
